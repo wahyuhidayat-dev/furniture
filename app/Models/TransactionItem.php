@@ -18,6 +18,7 @@ class TransactionItem extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
+    //! setiap transaction item have 1 product
     public function product(): HasOne
     {
         return $this->hasOne(Product::class, 'id', 'products_id');
