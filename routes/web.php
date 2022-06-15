@@ -18,6 +18,11 @@ use App\Http\Controllers\FrontendController;
 // });
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/details/{slug}', [FrontendController::class ,'details'])->name('details');
+Route::get('/notfound', [FrontendController::class,'notfound'])->name('notfound');
+Route::get('/carts', [FrontendController::class,'carts'])->name('carts');
+Route::get('/success', [FrontendController::class,'success'])->name('checkout-success');
+
 
 Route::middleware([
     'auth:sanctum',
