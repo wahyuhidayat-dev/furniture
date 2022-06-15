@@ -13,23 +13,21 @@ use App\Http\Controllers\FrontendController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/details/{slug}', [FrontendController::class ,'details'])->name('details');
 Route::get('/notfound', [FrontendController::class,'notfound'])->name('notfound');
 Route::get('/carts', [FrontendController::class,'carts'])->name('carts');
 Route::get('/success', [FrontendController::class,'success'])->name('checkout-success');
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+])->name('dashboard.')->prefix('dashboard')->group(function() {
+    
+    Route::get('/', [DashboardController::class,'index'])->name('dashboard');
+    
+    Route::middleware('admin')->group(function () {
+        
+    });
 });
