@@ -26,25 +26,15 @@
 
 <body>
     <!-- Add your site or application content here -->
-    {{-- //! component/frontend/navbar --}}
+    {{-- //TODO component/frontend/navbar --}}
     @include('components.frontend.navbar')
 
-    {{-- //! kontent --}}
+    {{-- //TODO kontent --}}
     @yield('content')
 
-    {{-- //! compponent/frontend/footer --}}
+    {{-- //TODO compponent/frontend/footer --}}
     @include('components.frontend.footer')
 
-    <!-- START: LOAD SVG -->
-    <!-- <svg width="23" height="26" class="hidden" id="icon-play">
-      <path
-        d="M21 9.536c2.667 1.54 2.667 5.39 0 6.928l-15 8.66c-2.667 1.54-6-.385-6-3.464V4.34C0 1.26 3.333-.664 6 .876l15 8.66z"
-        fill="#fff"
-      />
-    </svg> -->
-    <!-- END: LOAD SVG  -->
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
         window.ga = function() {
             ga.q.push(arguments);
